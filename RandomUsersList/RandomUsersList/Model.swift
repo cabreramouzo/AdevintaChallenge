@@ -8,31 +8,47 @@
 import SwiftUI
 import Combine
 
-let urlRandomUsers = URL(string: "https://randomuser.me/api/")
+let urlRandomUsers = URL(string: "https://randomuser.me/api/")!
 
-struct UserName: Codable {
-    let title: String
-    let first: String
-    let last: String
+struct UserName: Decodable, Hashable {
+    let title, first, last: String
 }
 
-struct UserLocation: Codable {
-    let street: String
+struct UserStreet: Decodable, Hashable {
+    let number: Int
+    let name: String
+}
+
+struct UserLocation: Decodable, Hashable {
+    let street: UserStreet
     let city: String
     let state: String
 }
 
-enum Gender: String, Codable, CaseIterable {
-    case female = "Female"
-    case male = "Male"
+enum Gender: String, Decodable, CaseIterable, Hashable {
+    case female
+    case male
 }
 
-struct UserModel: Codable, Identifiable {
-    let id:Int
+struct RegisteredDate: Decodable, Hashable {
+    let date: String
+    let age: Int
+}
+
+struct UserPicture: Decodable, Hashable {
+    let large, medium, thumbnail: String
+}
+
+struct UserModel: Decodable, Hashable {
     let name: UserName
     let location: UserLocation
-    let registeredDate: Date
+    let registered: RegisteredDate
     let gender: Gender
     let email: String
-    let avatar: URL
+    let picture: UserPicture
 }
+
+struct ApiResult: Decodable {
+    let results: [UserModel]
+}
+
