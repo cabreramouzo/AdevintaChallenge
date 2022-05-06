@@ -11,9 +11,16 @@ struct ContentView: View {
     @EnvironmentObject var usersVM: RandomUsersViewModel
     @StateObject var imagesVM = ImageViewModel()
     var body: some View {
-        List {
-            ForEach(usersVM.randomUsers, id: \.self) { user in
-                UserRow(user: user)
+        NavigationView {
+            List {
+                ForEach(usersVM.randomUsers, id: \.self) { user in
+                    NavigationLink(
+                        destination: UserDetailView(user: user),
+                        label: {
+                            UserRow(user: user)
+                        })
+                        .navigationTitle(Text("Random Users"))
+                }
             }
         }
     }

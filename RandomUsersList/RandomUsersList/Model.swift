@@ -26,8 +26,8 @@ struct UserLocation: Decodable, Hashable {
 }
 
 enum Gender: String, Decodable, CaseIterable, Hashable {
-    case female
-    case male
+    case female = "female"
+    case male = "male"
 }
 
 struct RegisteredDate: Decodable, Hashable {

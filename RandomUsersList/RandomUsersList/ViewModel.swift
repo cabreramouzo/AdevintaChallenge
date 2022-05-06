@@ -54,7 +54,6 @@ final class ImageViewModel: ObservableObject {
     var subscribers = Set<AnyCancellable>()
     
     func getNetworkImage(url: URL?) {
-        print("descargo imagen \(String(describing: url))")
         URLSession.shared
             .dataTaskPublisher(for: url!)
             .receive(on: DispatchQueue.main)
