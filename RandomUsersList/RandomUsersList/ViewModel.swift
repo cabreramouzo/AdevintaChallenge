@@ -46,6 +46,10 @@ final class RandomUsersViewModel: ObservableObject {
             .store(in: &subscribers)
     }
     
+    func remove(at index: IndexSet) {
+        randomUsers.remove(at: Int(index.first!))
+    }
+    
 }
 
 final class ImageViewModel: ObservableObject {

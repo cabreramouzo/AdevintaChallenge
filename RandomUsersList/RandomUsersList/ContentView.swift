@@ -21,6 +21,9 @@ struct ContentView: View {
                         })
                         .navigationTitle(Text("Random Users"))
                 }
+                .onDelete(perform: {index in
+                    usersVM.remove(at: index)
+                })
             }
         }
     }
