@@ -9,6 +9,7 @@ import SwiftUI
 
 struct UserDetailView: View {
     let user: UserModel
+    @StateObject var imagesVM = ImageViewModel()
     var body: some View {
         VStack {
             Form {
@@ -33,13 +34,28 @@ struct UserDetailView: View {
                     HStack {
                         Text("Gender")
                             .font(.headline)
-                        Text(user.email)
+                        Text(user.gender.rawValue.capitalized)
                     }
                     VStack(alignment: .leading) {
                         Text("Registered Date")
                             .font(.headline)
                         Text(user.registered.date)
                     }
+                }
+                Section(header: Text("User Image")) {
+                    HStack {
+                        Spacer()
+                        imagesVM.image
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width:150, height: 150)
+                            .background(Color.gray.opacity(0.3))
+                            .cornerRadius(10)
+                        Spacer()
+                    }
+                }
+                .onAppear() {
+                    imagesVM.getNetworkImage(url: URL(string: user.picture.large))
                 }
             }
         }
