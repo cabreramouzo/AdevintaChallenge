@@ -23,7 +23,7 @@ final class RandomUsersViewModel: ObservableObject {
                     print("Error when leading \(error)")
                 }
             }, receiveValue: { response in
-                print(response)
+                //print(response)
                 self.randomUsers = response.results
             })
             .store(in: &subscribers)
@@ -44,7 +44,7 @@ final class RandomUsersViewModel: ObservableObject {
                     print("Error when leading \(error)")
                 }
             }, receiveValue: { response in
-                print(response)
+                //print(response)
                 self.randomUsers = response.results
             })
             .store(in: &subscribers)
