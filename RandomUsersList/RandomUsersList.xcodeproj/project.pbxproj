@@ -15,6 +15,7 @@
 		047340EB2823C7420098EC13 /* RandomUsersListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047340EA2823C7420098EC13 /* RandomUsersListUITests.swift */; };
 		047340FC2823C7BD0098EC13 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047340FB2823C7BD0098EC13 /* Model.swift */; };
 		047341012823CA930098EC13 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047341002823CA930098EC13 /* ViewModel.swift */; };
+		0473411F2825320B0098EC13 /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0473411E2825320B0098EC13 /* UserDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		047340EC2823C7420098EC13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		047340FB2823C7BD0098EC13 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		047341002823CA930098EC13 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		0473411E2825320B0098EC13 /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				047340D62823C7420098EC13 /* Info.plist */,
 				047340D32823C7420098EC13 /* Preview Content */,
 				047340FB2823C7BD0098EC13 /* Model.swift */,
+				0473411E2825320B0098EC13 /* UserDetailView.swift */,
 				047341002823CA930098EC13 /* ViewModel.swift */,
 			);
 			path = RandomUsersList;
@@ -268,6 +271,7 @@
 				047340FC2823C7BD0098EC13 /* Model.swift in Sources */,
 				047340D02823C7370098EC13 /* ContentView.swift in Sources */,
 				047341012823CA930098EC13 /* ViewModel.swift in Sources */,
+				0473411F2825320B0098EC13 /* UserDetailView.swift in Sources */,
 				047340CE2823C7370098EC13 /* RandomUsersListApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

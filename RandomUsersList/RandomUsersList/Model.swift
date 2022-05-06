@@ -8,21 +8,21 @@
 import SwiftUI
 import Combine
 
-let urlRandomUsers = URL(string: "https://randomuser.me/api/?results=30")!
+var urlRandomUsers = URL(string: "https://randomuser.me/api/?results=30")!
 
 struct UserName: Decodable, Hashable {
-    let title, first, last: String
+    var title, first, last: String
 }
 
 struct UserStreet: Decodable, Hashable {
-    let number: Int
-    let name: String
+    var number: Int
+    var name: String
 }
 
 struct UserLocation: Decodable, Hashable {
-    let street: UserStreet
-    let city: String
-    let state: String
+    var street: UserStreet
+    var city: String
+    var state: String
 }
 
 enum Gender: String, Decodable, CaseIterable, Hashable {
@@ -31,24 +31,24 @@ enum Gender: String, Decodable, CaseIterable, Hashable {
 }
 
 struct RegisteredDate: Decodable, Hashable {
-    let date: String
-    let age: Int
+    var date: String
+    var age: Int
 }
 
 struct UserPicture: Decodable, Hashable {
-    let large, medium, thumbnail: String
+    var large, medium, thumbnail: String
 }
 
 struct UserModel: Decodable, Hashable {
-    let name: UserName
-    let location: UserLocation
-    let registered: RegisteredDate
-    let gender: Gender
-    let email: String
-    let picture: UserPicture
+    var name: UserName
+    var location: UserLocation
+    var registered: RegisteredDate
+    var gender: Gender
+    var email: String
+    var picture: UserPicture
 }
 
 struct ApiResult: Decodable {
-    let results: [UserModel]
+    var results: [UserModel]
 }
 
