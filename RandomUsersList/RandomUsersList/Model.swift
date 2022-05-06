@@ -8,7 +8,7 @@
 import SwiftUI
 import Combine
 
-var urlRandomUsers = URL(string: "https://randomuser.me/api/?results=30")!
+var urlRandomUsers = URL(string: "https://randomuser.me/api/?inc=gender,name,email,location,registered,picture&results=300")!
 
 struct UserName: Decodable, Hashable {
     var title, first, last: String
@@ -51,4 +51,3 @@ struct UserModel: Decodable, Hashable {
 struct ApiResult: Decodable {
     var results: [UserModel]
 }
-
