@@ -8,8 +8,16 @@
 import SwiftUI
 import Combine
 
-var urlRandomUsers = URL(string: "https://randomuser.me/api/?inc=gender,name,email,location,registered,picture&results=300")!
+//MARK: Network
+//TODO: Implement pagination compatible with deletion of users.
+//let seed = "MiguelAngel"
+//var userArrayIsFull = false
+//var currentPage = 0
+var itemsPerPage = 50
 
+var urlRandomUsers = URL(string: "https://randomuser.me/api/?inc=gender,name,email,location,registered,picture&results=\(itemsPerPage)")!
+
+//MARK: Model
 struct UserName: Decodable, Hashable {
     var title, first, last: String
 }
