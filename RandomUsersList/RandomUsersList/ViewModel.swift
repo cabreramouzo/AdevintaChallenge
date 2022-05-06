@@ -29,6 +29,10 @@ final class RandomUsersViewModel: ObservableObject {
             .store(in: &subscribers)
     }
     
+    init(usersArray: [UserModel]) {
+        self.randomUsers = usersArray
+    }
+    
     func fetchData() {
         URLSession.shared
             .dataTaskPublisher(for: urlRandomUsers)
@@ -49,7 +53,6 @@ final class RandomUsersViewModel: ObservableObject {
     func remove(at index: IndexSet) {
         randomUsers.remove(at: Int(index.first!))
     }
-    
 }
 
 final class ImageViewModel: ObservableObject {
